@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Upper part css */
+/* background image settings*/
+.bg-image {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+}
+
+/* header section settings */
+.header {
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+  position: relative;
+}
+
+.nav {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: large;
+  padding: 0.2%;
+}
+
+.dropdown-item {
+  font-size: large;
+  font-weight: 500;
+}
+
+.text-box {
+  margin-top: 15%;
+  font-size: 17px;
+  letter-spacing: 1px;
+  line-height: 26px;
+  padding-left: 5%;
+}
+
+.text-box h1 {
+  font-size: 75px;
+  line-height: 160px;
+}
+
+.user-img {
+  height: 50%;
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+}
+
+/* The transition effect for the text*/
+.auto-input {
+  color: transparent;
+  background-color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: animate 20s linear infinite;
+}
+
+/* The lower part - Cards css */
+
+.heading {
+  text-align: center;
+  font-size: 30px;
+  margin: 50px 0;
+}
+
+.row {
+  width: 100%;
+}
+
+.card {
+  width: 20%;
+  background: #fff;
+  border: 1px solid rgb(0, 0, 0);
+  margin: 0 0 30px 50px;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.card-header {
+  margin-top: 10%;
+  text-align: center;
+  padding: 60px 10px;
+  border-bottom: #fff;
+}
+
+#SJF-card {
+  margin-left: 90px;
+}
+
+#SJF-head {
+  background: url("/images/homepage_images/SJF.jpg");
+  background-size: 70% 100%;
+  background-repeat: no-repeat;
+  margin-left: 25%;
+}
+
+#SJF-heading {
+  margin-bottom: 10px;
+}
+
+#DF-head {
+  background: url("/images/homepage_images/DF.png");
+  background-size: 70% 100%;
+  background-repeat: no-repeat;
+  margin-left: 25%;
+}
+
+#DF-heading {
+  margin-bottom: 10px;
+}
+
+#LOOK-head {
+  background: url("../images/homepage_images/LOOK.png");
+  background-size: 70% 100%;
+  background-repeat: no-repeat;
+  margin-left: 28%;
+}
+
+#LOOK-heading {
+  margin-bottom: 55px;
+}
+
+#FIFO-head {
+  background: url("/images/homepage_images/FIFO.jpg");
+  background-size: 70% 100%;
+  background-repeat: no-repeat;
+  margin-left: 23%;
+}
+
+#FIFO-heading {
+  margin-bottom: 30px;
+}
+
+.card-body {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.card-body .btn {
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background-image: linear-gradient(to right, #228ce4, #54b9ef);
+  margin-top: 30px;
+  text-decoration: none;
+  padding: 10px 5px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background-image: linear-gradient(to right, #2a71ff, #2c8efe);
+}

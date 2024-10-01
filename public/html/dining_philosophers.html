@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dining Philosopher's Problem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../css/dining_philosophers.css" />
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6431ba7431ebfa0fe7f73a08/1gth40njg';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar-light">
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link" style="color: white;" href="../html/homepage.html">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" style="color: white;" data-bs-toggle="dropdown" href="#" role="button"
+          aria-expanded="false">Algorithms</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../html/SJF.html">Shortest Job First</a></li>
+          <li><a class="dropdown-item" href="../html/dining_philosophers.html">Dining Philosoper's Problem</a></li>
+          <li><a class="dropdown-item" href="../html/Look_CLook.html">Look / C-Look</a></li>
+          <li><a class="dropdown-item" href="../html/FIFO.html">FIFO Page Replacement</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: white;" href="../html/AboutUs.html">About Us</a>
+      </li>
+    </ul>
+  </nav>
+
+  <video class="vid" src="../videos/pattern-85590.mp4"></video>
+
+  <div class="card">
+    <div id="heading" class="card-header">
+      Dining Philosopher's Problem
+    </div>
+    <div id="display" class="card-body">
+      <div id="image">
+        <div id="newtable"></div>
+        <img src="../images/dining_philosophers_images/p1.png" alt="" class="philosopher" id="p1" />
+        <img src="../images/dining_philosophers_images/p1.png" alt="" class="philosopher" id="p2" />
+        <img src="../images/dining_philosophers_images/p1.png" alt="" class="philosopher" id="p3" />
+        <img src="../images/dining_philosophers_images/p1.png" alt="" class="philosopher" id="p4" />
+        <img src="../images/dining_philosophers_images/p1.png" alt="" class="philosopher" id="p5" />
+        <div id="one">P1</div>
+        <div id="two">P2</div>
+        <div id="three">P3</div>
+        <div id="four">P4</div>
+        <div id="five">P5</div>
+
+        <img src="../images/dining_philosophers_images/c1.png" alt="" class="chopstick" id="c0" />
+        <img src="../images/dining_philosophers_images/c1.png" alt="" class="chopstick" id="c1" />
+        <img src="../images/dining_philosophers_images/c1.png" alt="" class="chopstick" id="c2" />
+        <img src="../images/dining_philosophers_images/c1.png" alt="" class="chopstick" id="c3" />
+        <img src="../images/dining_philosophers_images/c1.png" alt="" class="chopstick" id="c4" />
+        <img src="../images/dining_philosophers_images/n1.png" alt="" id="main-bowl" />
+        <img src="../images/dining_philosophers_images/n1.png" alt="" class="noodle-bowl" id="b1" />
+        <img src="../images/dining_philosophers_images/n1.png" alt="" class="noodle-bowl" id="b2" />
+        <img src="../images/dining_philosophers_images/n1.png" alt="" class="noodle-bowl" id="b3" />
+        <img src="../images/dining_philosophers_images/n1.png" alt="" class="noodle-bowl" id="b4" />
+        <img src="../images/dining_philosophers_images/n1.png" alt="" class="noodle-bowl" id="b5" />
+        <div id="blank"></div>
+      </div>
+      <div id="working">
+        <p id="user-inp">
+          Enter the sequence in which the philosophers will eat
+        </p>
+        <div id="pno-inputs">
+          <input type="number" name="pno1" id="pno1" value="" max="5" min="1" style="text-align: center" />
+          <input type="number" name="pno2" id="pno2" value="" max="5" min="1" style="text-align: center" />
+          <input type="number" name="pno3" id="pno3" value="" max="5" min="1" style="text-align: center" />
+          <input type="number" name="pno4" id="pno4" value="" max="5" min="1" style="text-align: center" />
+          <input type="number" name="pno5" id="pno5" value="" max="5" min="1" style="text-align: center" />
+        </div>
+        <div style="text-align: center;">
+          <button id="eat" class="btn btn-outline-success">Start Process</button>
+          <button id="reset" onclick="resetPage()" class="btn btn-outline-danger">Reset</button>
+        </div>
+        <div class="list-border">
+          <div class="output-head">Output</div>
+          <ul id="st-list" style="display: none"></ul>
+        </div>
+      </div>
+      </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+      crossorigin="anonymous"></script>
+    <script src="../backend/js/dining_philosophers.js"></script>
+    <!-- FireBase Links -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBNtP-_k4OAbcLZfuMRGwfNqpoApwV5G1U",
+        authDomain: "oslab-e7a1e.firebaseapp.com",
+        projectId: "oslab-e7a1e",
+        storageBucket: "oslab-e7a1e.appspot.com",
+        messagingSenderId: "384725193835",
+        appId: "1:384725193835:web:6097c0a9e1e96de4f0cd2e",
+        measurementId: "G-95Y101QLS9"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+</body>
+
+</html>

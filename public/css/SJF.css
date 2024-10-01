@@ -1,0 +1,157 @@
+/* Video css */
+video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+body {
+  line-height: 1.6em;
+  font-family: "poppins", "sans-serif";
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.nav {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: large;
+  padding: 0.2%;
+}
+
+.dropdown-item {
+  font-size: large;
+  font-weight: 500;
+}
+
+#heading {
+  border-radius: 8px;
+  font-family: "Bitter", serif;
+  font-size: 30px;
+  margin: 15px 0;
+  background-color: #4caf50;
+  min-height: 80px;
+  align-self: center;
+  text-align: center;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  padding-top: 20px;
+}
+
+.card {
+  margin: 10px 60px;
+  border-radius: 10px;
+}
+
+.input-form {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+}
+
+.input-form label {
+  display: block;
+  margin-left: 20px;
+  letter-spacing: 1px;
+}
+
+.input-form button {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 10px 0 15px 2px;
+  width: 10%;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: separate;
+  border: 1mm solid #73214a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+table th,
+table td {
+  padding: 10px !important;
+  color: #000;
+}
+
+th {
+  background-color: #9adcff;
+}
+
+table > thead > tr > th,
+table > thead > tr > td {
+  border-bottom: 1px;
+  border-bottom-width: 2px;
+}
+
+table > thead > tr > td {
+  background-color: #fcfcfc;
+}
+
+.container-3 {
+  margin-bottom: 100px;
+}
+
+.outputSection {
+  align-self: center;
+  margin-top: 60px;
+  margin-left: 30px;
+  width: 95%;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: #f7f7f7f4;
+}
+
+.output-heading {
+  padding: 10px;
+  width: 25%;
+  font-size: 30px;
+  text-align: center;
+  border: 2px;
+  color: #fff;
+  background-color: #2193f3;
+  border-radius: 6px;
+  margin: 20px auto 40px;
+  font-family: "Bitter", serif;
+}
+
+.output-table {
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #ecf2ff;
+  margin: 40px 30px 0 30px;
+}
+
+.table-head {
+  margin-bottom: 20px;
+}
+
+#statTable-s {
+  background-color: #ecf2ff;
+  margin: 40px 30px 20px 30px;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 21px;
+}
+
+.gantt-chart {
+  margin: 40px 30px 0 30px;
+  background-color: #ecf2ff;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.input-group {
+  padding: 15px 10px;
+}
